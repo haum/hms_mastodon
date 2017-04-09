@@ -3,6 +3,8 @@ HMS Mastodon
 
 A microservice that can toot to Mastodon.
 
+See https://social.svallee.fr/@HAUM for live account.
+
 License
 -------
 

@@ -1,0 +1,14 @@
+[Unit]
+Description=HAUM's Mastodon microservice
+After=mutli-user.target
+Requires=multi-user.target
+
+[Service]
+Type=simple
+User=hms_mastodon
+ExecStart=/home/hms_mastodon/hms_mastodon/systemd/run.sh
+Restart=always
+RestartSec=120
+
+[Install]
+WantedBy=multi-user.target

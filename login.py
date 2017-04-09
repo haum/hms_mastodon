@@ -15,9 +15,9 @@ def login():
     mastodon = Mastodon(client_id = settings.CLIENT_CREDS_FILE,
                         api_base_url = settings.API_BASE_URL)
 
-    password = input(f"Enter password for {settings.EMAIL} Mastodon account: ")
+    password = input(f"Enter password for {} Mastodon account: ".format(settings.EMAIL))
 
-    print(f"Logging in to Mastodon instance with account {settings.EMAIL} and password {password}…")
+    print(f"Logging in to Mastodon instance with account {} and password {}…".format(settings.EMAIL, password))
     print(mastodon.log_in(
         settings.EMAIL, password,
         to_file = settings.USER_CREDS_FILE,

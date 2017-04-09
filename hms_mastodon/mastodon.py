@@ -27,5 +27,5 @@ class HmsMastodon:
         else:
             message = strings.TWAUM_CLOSED
 
-        get_logger().info(f"Sending new status toot: {message}")
+        get_logger().info("Sending new status toot: {}".format(message))
         self.mastodon.toot(message)

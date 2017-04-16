@@ -7,4 +7,7 @@ This project adheres to `Semantic Versioning <http://semver.org/>`__.
 [Unreleased]
 ------------
 
-- Added basic support for Mastodon
+[1.0] - 2017-04-09
+------------------
+
+- Added support for spacestatus open/close events

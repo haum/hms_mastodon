@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='hms_mastodon',
-    version='1.0',
+    version='1.1',
     packages=find_packages(),
     scripts=['bin/hms_mastodon'],
 

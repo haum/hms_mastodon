@@ -32,7 +32,13 @@ def main():
     def on_spacestatus_broadcast(client, topic, dct):
         mastodon.toot_new_status(dct)
 
+    # Register callback for toot
+    @topic('mastodon.toot')
+    def on_mastodon_toot(client, topic, dct):
+        mastodon.toot(dct['message'])
+
     rabbit.listeners.append(on_spacestatus_broadcast)
+    rabbit.listeners.append(on_mastodon_toot)
 
     # Start service
     get_logger().info("Starting passive consumming...")

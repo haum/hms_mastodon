@@ -29,3 +29,8 @@ class HmsMastodon:
 
         get_logger().info("Sending new status toot: {}".format(message))
         self.mastodon.toot(message)
+
+    def toot(self, message):
+        """Send a toot."""
+        get_logger().info("Sending toot: {}".format(message))
+        self.mastodon.toot(message)

@@ -5,7 +5,7 @@
 RABBIT_HOST = 'localhost'                   # Address of the server
 RABBIT_EXCHANGE = 'haum'                    # Name of the direct exchanger
 
-RABBIT_ROUTING_KEYS = ['spacestatus.broadcast']       # List of routing keys to listen to
+RABBIT_ROUTING_KEYS = ['spacestatus.broadcast', 'mastodon.*']       # List of routing keys to listen to
 
 # Mastodon
 

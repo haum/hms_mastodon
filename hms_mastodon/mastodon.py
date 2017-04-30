@@ -23,14 +23,16 @@ class HmsMastodon:
     def toot_new_status(self, data):
         """Toots the new status of the space."""
         if data['is_open']:
-            message = strings.TWAUM_OPEN
+            short_msg = strings.TWAUM_OPEN_SHORT
+            long_msg = strings.TWAUM_OPEN
         else:
-            message = strings.TWAUM_CLOSED
+            short_msg = strings.TWAUM_CLOSED_SHORT
+            long_msg = strings.TWAUM_CLOSED
 
-        get_logger().info("Sending new status toot: {}".format(message))
-        self.mastodon.toot(message)
+        get_logger().info("Sending new status toot: {}".format(short_msg))
+        self.mastodon.status_post(long_msg, spoiler_text=short_msg)
 
     def toot(self, message):
         """Send a toot."""
         get_logger().info("Sending toot: {}".format(message))
-        self.mastodon.toot(message)
+        self.mastodon.status_post(message)

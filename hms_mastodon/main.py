@@ -1,4 +1,5 @@
 import logging
+from threading import Thread
 
 import coloredlogs
 
@@ -26,6 +27,14 @@ def main():
 
     # Mastodon
     mastodon = HmsMastodon()
+
+    def stream():
+        mastodon.init_streaming(rabbit)
+
+    streaming_thread = Thread(target=stream)
+    streaming_thread.setDaemon(True)
+
+    streaming_thread.start()
 
     # Register callback for spacestatus broadcast messages
     @topic('spacestatus.broadcast')

@@ -11,6 +11,7 @@ RABBIT_ROUTING_KEYS = ['spacestatus.broadcast', 'mastodon.*']       # List of ro
 
 EMAIL = "mastodon-haum@microjoe.org"
 API_BASE_URL = "https://social.svallee.fr"
+ACCOUNT_URL = "https://social.svallee.fr/@HAUM"
 
 APP_NAME = "hms_mastodon"
 

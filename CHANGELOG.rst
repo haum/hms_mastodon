@@ -7,6 +7,7 @@ This project adheres to `Semantic Versioning <http://semver.org/>`__.
 [Unreleased]
 ------------
 
+- Streaming API support for mentions
 - Emojis and shorter toot messages (with spoiler feature) in order to not spam
   the toot timeline of users
 

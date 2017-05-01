@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock
 
-from hms_mastodon.mastodon import HmsMastodon
+from hms_mastodon.mastodon import HmsMastodon, Mention
 from hms_mastodon import strings
 
 
@@ -31,3 +31,26 @@ class MastodonTests(unittest.TestCase):
     def test_toot(self):
         self.mastodon.toot('test')
         self.mocked_status_post.assert_called_once_with('test')
+
+
+class MentionParserTest(unittest.TestCase):
+    def test_parse_notification(self):
+        notification = {
+            'status': {
+                'account': {
+                    'acct': 'test@instance.mastodon'
+                },
+                'url': 'https://instance.mastodon/users/MyUser/updates/1234',
+                'content': '<p><span class="h-card"><a '
+                           'href="https://social.svallee.fr/@HAUM">@<span>HAUM</span></a></span> test</p>',
+                'visibility': 'private'
+            }
+        }
+
+        mention = Mention.from_notification(notification)
+
+        self.assertEqual('test@instance.mastodon', mention.user)
+        self.assertEqual('https://instance.mastodon/users/MyUser/updates/1234',
+                         mention.url)
+        self.assertEqual('@HAUM test', mention.content)
+        self.assertEqual('private', mention.visibility)

@@ -10,7 +10,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='hms_mastodon',
-    version='1.2',
+    version='1.2.1',
     packages=find_packages(),
     scripts=['bin/hms_mastodon'],
 
@@ -34,5 +34,5 @@ setup(
     ],
 
     install_requires=['pika', 'hms_base>=2.0,<3', 'mastodon.py',
-                      'coloredlogs', 'emoji', 'beautifulsoup4']
+                      'coloredlogs', 'emoji', 'beautifulsoup4', 'attrs']
 )

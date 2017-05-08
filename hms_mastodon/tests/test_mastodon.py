@@ -52,5 +52,5 @@ class MentionParserTest(unittest.TestCase):
         self.assertEqual('test@instance.mastodon', mention.user)
         self.assertEqual('https://instance.mastodon/users/MyUser/updates/1234',
                          mention.url)
-        self.assertEqual('@HAUM test', mention.content)
+        self.assertEqual('@HAUM test', mention.text_content)
         self.assertEqual('private', mention.visibility)
